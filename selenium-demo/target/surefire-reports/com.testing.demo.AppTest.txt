@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.testing.demo.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.81 s -- in com.testing.demo.AppTest
