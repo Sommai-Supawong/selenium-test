@@ -1,36 +1,34 @@
-# 🚀 Java Selenium WebDriver - Automation Testing Demo
+# 🧪 Java Selenium QA Automation
 
-โปรเจกต์ทดสอบระบบอัตโนมัติ (Automated Web Testing) สำหรับแอปพลิเคชันบนเว็บ พัฒนาด้วยภาษา **Java** และ **Selenium WebDriver** โดยใช้โครงสร้างโปรเจกต์มาตรฐานของ **Apache Maven** ร่วมกับ **TestNG Framework**
+โปรเจกต์เริ่มต้นสำหรับการทำ Automated Testing ด้วยภาษา Java และ Selenium WebDriver โดยใช้ Maven ในการจัดการ Dependencies โครงสร้างโปรเจกต์ถูกออกแบบมาให้สะอาด เรียบง่าย และพร้อมสำหรับการต่อยอดในการทดสอบ Web Application แบบ E2E (End-to-End Testing)
 
----
-
-## 🛠️ Tech Stack (เครื่องมือที่ใช้พัฒนา)
-
+## 🛠️ Tech Stack & Tools
 * **Language:** Java (JDK 17+)
-* **Automation Tool:** Selenium WebDriver 4.20+
-* **Testing Framework:** TestNG 7.9+
-* **Build Tool:** Apache Maven
-* **IDE:** Visual Studio Code
+* **Testing Framework:** TestNG
+* **Automation Tool:** Selenium WebDriver
+* **Build Tool:** Maven
+* **IDE:** Visual Studio Code (VS Code)
 
----
-
-## 📂 Project Structure (โครงสร้างไฟล์)
+## 📂 Project Structure
+โครงสร้างโปรเจกต์อ้างอิงตามมาตรฐานของ Maven เพื่อให้ง่ายต่อการดูแลรักษา:
 
 ```text
 selenium-demo/
-│
-├── drivers/
-│   └── chromedriver.exe       # เบราว์เซอร์ไดรเวอร์สำหรับ Chrome (จำลองการทำงานจริง)
+├── .github/               # การตั้งค่าสำหรับระบบของ GitHub (เช่น Actions/Workflows)
+├── drivers/               # โฟลเดอร์สำหรับเก็บ WebDriver (เช่น chromedriver.exe)
 ├── src/
-│   └── test/
-│       └── java/
-│           └── com/testing/demo/
-│               └── AppTest.java   # ไฟล์หลักสำหรับเขียน Test Cases และ Step การทดสอบ
-├── .gitignore                 # ระบุไฟล์ที่ห้ามอัปโหลดขึ้น Git (เช่น .env, โฟลเดอร์ .vscode)
-├── pom.xml                    # ไฟล์จัดการ Library และ Dependencies ของ Maven
-└── README.md                  # เอกสารสรุปรายละเอียดโปรเจกต์
-
----
+│   ├── main/              # โฟลเดอร์สำหรับ Source Code หลักของแอปพลิเคชัน
+│   │   ├── java/com/example/
+│   │   │   └── App.java
+│   │   └── resources/     # ไฟล์การตั้งค่าหรือ Resource ต่างๆ ของแอปพลิเคชัน
+│   └── test/              # 🌟 โฟลเดอร์หลักสำหรับเขียนสคริปต์ Automated Test
+│       └── java/com/testing/demo/
+│           └── AppTest.java
+├── target/                # โฟลเดอร์เก็บไฟล์ที่ผ่านการ Compile และ Build จาก Maven (ไม่นำขึ้น GitHub)
+├── .env                   # ไฟล์เก็บข้อมูลความลับ เช่น รหัสผ่าน หรือ URL (ซ่อนไว้ผ่าน .gitignore)
+├── .gitignore             # ระบุไฟล์ที่ไม่อัปโหลดขึ้น GitHub (เช่น .env, target/, drivers/)
+├── pom.xml                # ไฟล์จัดการ Dependencies ของ Maven
+└── README.md              # ไฟล์เอกสารอธิบายรายละเอียดของโปรเจกต์
 
 ## 📝 Test Cases (เคสทดสอบในระบบ)
 
