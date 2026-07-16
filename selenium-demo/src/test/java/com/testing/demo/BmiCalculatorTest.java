@@ -7,8 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,31 +17,16 @@ import org.testng.annotations.Test;
 
 public class BmiCalculatorTest {
 
-    // Driver สำหรับควบคุม Firefox
     private WebDriver driver;
-
-    // Explicit Wait
     private WebDriverWait wait;
 
     @BeforeMethod
     public void setUp() {
 
-        // 1. ระบุ Path ของ geckodriver.exe
-        System.setProperty(
-            "webdriver.gecko.driver",
-            "drivers/geckodriver.exe"
-        );
-
-        // 2. เปิด Firefox
-        driver = new FirefoxDriver();
-
-        // 3. ขยาย Browser
-        driver.manage().window().maximize();
-
-        // 4. กำหนด Explicit Wait สูงสุด 10 วินาที
+        driver = DriverFactory.create("firefox");
         wait = new WebDriverWait(
             driver,
-            Duration.ofSeconds(10)
+            Duration.ofSeconds(15)
         );
     }
 

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.testing.demo.BmiCalculatorTest
+Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.36 s -- in com.testing.demo.BmiCalculatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.99 s -- in TestSuite

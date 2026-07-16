@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.testing.demo.BmiCalculatorTest" time="14.365" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="20.986" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,10 +13,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TH"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/technology06/674259024/selenium-test/selenium-demo/target/surefire/surefirebooter-20260716101927775_3.jar /Users/technology06/674259024/selenium-test/selenium-demo/target/surefire 2026-07-16T10-19-27_738-jvmRun1 surefire-20260716101927775_1tmp surefire_0-20260716101927775_2tmp"/>
+    <property name="sun.java.command" value="/Users/technology06/674259024/selenium-test/selenium-demo/target/surefire/surefirebooter-20260716101959027_3.jar /Users/technology06/674259024/selenium-test/selenium-demo/target/surefire 2026-07-16T10-19-58_991-jvmRun1 surefire-20260716101959027_1tmp surefire_0-20260716101959027_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="BmiCalculatorTest"/>
     <property name="surefire.test.class.path" value="/Users/technology06/674259024/selenium-test/selenium-demo/target/test-classes:/Users/technology06/674259024/selenium-test/selenium-demo/target/classes:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-java/4.44.0/selenium-java-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-api/4.44.0/selenium-api-4.44.0.jar:/Users/technology06/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.44.0/selenium-chrome-driver-4.44.0.jar:/Users/technology06/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.44.0/selenium-chromium-driver-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-json/4.44.0/selenium-json-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.44.0/selenium-manager-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v146/4.44.0/selenium-devtools-v146-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.44.0/selenium-devtools-v147-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v148/4.44.0/selenium-devtools-v148-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.44.0/selenium-edge-driver-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.44.0/selenium-firefox-driver-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-http/4.44.0/selenium-http-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.44.0/selenium-ie-driver-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.44.0/selenium-remote-driver-4.44.0.jar:/Users/technology06/.m2/repository/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar:/Users/technology06/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/Users/technology06/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/technology06/.m2/repository/com/google/errorprone/error_prone_annotations/2.47.0/error_prone_annotations-2.47.0.jar:/Users/technology06/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-api/1.62.0/opentelemetry-api-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-context/1.62.0/opentelemetry-context-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-common/1.62.0/opentelemetry-common-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.62.0/opentelemetry-exporter-logging-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.62.0/opentelemetry-sdk-common-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.62.0/opentelemetry-sdk-extension-autoconfigure-spi-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.62.0/opentelemetry-sdk-extension-autoconfigure-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.62.0/opentelemetry-sdk-trace-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.62.0/opentelemetry-sdk-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.62.0/opentelemetry-sdk-metrics-1.62.0.jar:/Users/technology06/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.62.0/opentelemetry-sdk-logs-1.62.0.jar:/Users/technology06/.m2/repository/net/bytebuddy/byte-buddy/1.18.8-jdk5/byte-buddy-1.18.8-jdk5.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-os/4.44.0/selenium-os-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.44.0/selenium-safari-driver-4.44.0.jar:/Users/technology06/.m2/repository/org/seleniumhq/selenium/selenium-support/4.44.0/selenium-support-4.44.0.jar:/Users/technology06/.m2/repository/org/testng/testng/7.9.0/testng-7.9.0.jar:/Users/technology06/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/technology06/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/technology06/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/Users/technology06/.m2/repository/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/technology06"/>
@@ -24,14 +23,14 @@
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2025-04-15"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home"/>
-    <property name="file.separator" value="/"/>
     <property name="basedir" value="/Users/technology06/674259024/selenium-test/selenium-demo"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vm.compressedOopsMode" value="Non-zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/technology06/674259024/selenium-test/selenium-demo/target/surefire/surefirebooter-20260716101927775_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/technology06/674259024/selenium-test/selenium-demo/target/surefire/surefirebooter-20260716101959027_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="24.0.1+9-30"/>
@@ -49,6 +48,7 @@
     <property name="user.dir" value="/Users/technology06/674259024/selenium-test/selenium-demo"/>
     <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="headless" value="false"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/technology06/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -59,7 +59,19 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testBmiCalculatorWithMetricInput" classname="com.testing.demo.BmiCalculatorTest" time="7.258">
+  <testcase name="testGoogleSearchTitle" classname="com.testing.demo.AppTest" time="1.4">
+    <system-out><![CDATA[Page Title is: Google
+]]></system-out>
+    <system-err><![CDATA[Jul 16, 2026 10:20:00 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 150, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 150
+]]></system-err>
+  </testcase>
+  <testcase name="testWikipediaSearch" classname="com.testing.demo.AppTest" time="3.768">
+    <system-err><![CDATA[Jul 16, 2026 10:20:02 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 150, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 150
+]]></system-err>
+  </testcase>
+  <testcase name="testBmiCalculatorWithMetricInput" classname="com.testing.demo.BmiCalculatorTest" time="6.556">
     <system-out><![CDATA[Age input = 25
 Gender displayed = false
 Gender enabled = true
