@@ -1,4 +1,4 @@
-# 🧪 Selenium Python Automated Testing
+# 🧪 Selenium Python katalon Automated Testing
 
 โปรเจกต์สำหรับทดสอบระบบอัตโนมัติแบบ **Automated UI Testing** บนเว็บไซต์ [Calculator.net – BMI Calculator](https://www.calculator.net/bmi-calculator.html) โดยใช้ **Python**, **Selenium 4** และ **unittest**
 
