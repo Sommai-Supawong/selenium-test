@@ -1,0 +1,28 @@
+{
+  "name": "my-first-node-project",
+  "version": "4.0.0",
+  "description": "jest",
+  "license": "ISC",
+  "author": "Sommai",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "Test Report"
+        }
+      ]
+    ],
+    "collectCoverage": true
+  },
+  "devDependencies": {
+    "jest": "^30.5.1",
+    "jest-html-reporter": "^4.4.2"
+  }
+}

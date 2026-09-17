@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 selenium>=4.34,<5
 pytest>=8.4,<9
 
+=======
+selenium
+>>>>>>> 22623ec (feat(test demo):add test demo)
