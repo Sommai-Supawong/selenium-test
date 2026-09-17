@@ -10,253 +10,120 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
 class LoginTest {
 
-    private WebDriver driver;
+        private WebDriver driver;
 
-    @BeforeEach
-    void setUp() {
-        driver = new ChromeDriver();
-    }
-
-    @AfterEach
-    void tearDown() {
-        if (driver != null) {
-            driver.quit();
+        @BeforeEach
+        void setUp() {
+                driver = new ChromeDriver();
         }
-    }
 
-    // Test 1: Login สำเร็จ
-    @Test
-    void shouldLoginSuccessfully() {
+        @AfterEach
+        void tearDown() {
+                if (driver != null) {
+                        driver.quit();
+                }
+        }
 
-        driver.get("https://seleniumbase.io/simple/login");
+        // Test 1: Login สำเร็จ
+        @Test
+        void shouldLoginSuccessfully() {
 
-        driver.findElement(By.id("username"))
-                .sendKeys("demo_user");
+                driver.get("https://seleniumbase.io/simple/login");
 
-        driver.findElement(By.id("password"))
-                .sendKeys("secret_pass");
+                WebDriverWait wait = new WebDriverWait(
+                                driver,
+                                Duration.ofSeconds(10));
 
-        driver.findElement(By.id("log-in"))
-                .click();
+                wait.until(
+                                ExpectedConditions.visibilityOfElementLocated(
+                                                By.id("username")))
+                                .sendKeys("demo_user");
 
-        String heading = driver.findElement(By.tagName("h1"))
-                .getText();
+                driver.findElement(By.id("password"))
+                                .sendKeys("secret_pass");
 
-        assertEquals("Welcome!", heading);
-    }
+                driver.findElement(By.id("log-in"))
+                                .click();
 
-   // Test 2: Login ผิดแล้วต้องมีข้อความแจ้งเตือน
-@Test
-void shouldShowErrorMessageWhenLoginFails() {
+                String heading = driver.findElement(By.tagName("h1"))
+                                .getText();
 
-    driver.get("https://seleniumbase.io/simple/login");
+                assertEquals("Welcome!", heading);
+        }
 
-    driver.findElement(By.id("username"))
-            .sendKeys("wrong_user");
+        // Test 2: Login ผิดแล้วต้องมีข้อความแจ้งเตือน
+        @Test
+        void shouldShowErrorMessageWhenLoginFails() {
 
-    driver.findElement(By.id("password"))
-            .sendKeys("wrong_password");
+                driver.get("https://seleniumbase.io/simple/login");
 
-    driver.findElement(By.id("log-in"))
-            .click();
+                driver.findElement(By.id("username"))
+                                .sendKeys("wrong_user");
 
-    // ค้นหาข้อความที่แสดงหลังจาก Login ผิด
-    String message = driver.findElement(By.tagName("body"))
-            .getText();
+                driver.findElement(By.id("password"))
+                                .sendKeys("wrong_password");
 
-    // ถ้ามีข้อความอะไรก็ได้ที่หน้าเว็บแสดงกลับมา ถือว่า Test สำเร็จ
-    assertFalse(message.isEmpty());
+                driver.findElement(By.id("log-in"))
+                                .click();
 
-    System.out.println("Login failed message: " + message);
-}
-// Test 3: ใส่ Username แต่ไม่ใส่ Password
-@Test
-void shouldShowErrorWhenPasswordIsEmpty() {
+                // ค้นหาข้อความที่แสดงหลังจาก Login ผิด
+                String message = driver.findElement(By.tagName("body"))
+                                .getText();
 
-    driver.get("https://seleniumbase.io/simple/login");
+                // ถ้ามีข้อความอะไรก็ได้ที่หน้าเว็บแสดงกลับมา ถือว่า Test สำเร็จ
+                assertFalse(message.isEmpty());
 
-    // ใส่เฉพาะ Username
-    driver.findElement(By.id("username"))
-            .sendKeys("demo_user");
+                System.out.println("Login failed message: " + message);
+        }
 
-    // ไม่ใส่ Password
+        // Test 3: ใส่ Username แต่ไม่ใส่ Password
+        @Test
+        void shouldShowErrorWhenPasswordIsEmpty() {
 
-    driver.findElement(By.id("log-in"))
-            .click();
+                driver.get("https://seleniumbase.io/simple/login");
 
-    // ตรวจสอบว่ามีข้อความแจ้งเตือนกลับมา
-    String message = driver.findElement(By.tagName("body"))
-            .getText();
+                // ใส่เฉพาะ Username
+                driver.findElement(By.id("username"))
+                                .sendKeys("demo_user");
 
-    assertFalse(message.isEmpty());
+                // ไม่ใส่ Password
 
-    System.out.println("Validation message: " + message);
-}
-// Test 4: ไม่ใส่ Username แต่ใส่ Password
-@Test
-void shouldShowErrorWhenUsernameIsEmpty() {
+                driver.findElement(By.id("log-in"))
+                                .click();
 
-    driver.get("https://seleniumbase.io/simple/login");
+                // ตรวจสอบว่ามีข้อความแจ้งเตือนกลับมา
+                String message = driver.findElement(By.tagName("body"))
+                                .getText();
 
-    // ไม่ใส่ Username
+                assertFalse(message.isEmpty());
 
-    // ใส่เฉพาะ Password
-    driver.findElement(By.id("password"))
-            .sendKeys("secret_pass");
+                System.out.println("Validation message: " + message);
+        }
 
-    driver.findElement(By.id("log-in"))
-            .click();
+        // Test 4: ไม่ใส่ Username แต่ใส่ Password
+        @Test
+        void shouldShowErrorWhenUsernameIsEmpty() {
 
-    // ตรวจสอบว่ายังอยู่หน้า Login
-    assertTrue(driver.getCurrentUrl().contains("login"));
+                driver.get("https://seleniumbase.io/simple/login");
 
-    System.out.println("Username is required.");
-}
-// Test 5: Username ถูก แต่ Password ผิด
-@Test
-void shouldShowErrorWhenPasswordIsWrong() {
+                // ไม่ใส่ Username
 
-    driver.get("https://seleniumbase.io/simple/login");
+                // ใส่เฉพาะ Password
+                driver.findElement(By.id("password"))
+                                .sendKeys("secret_pass");
 
-    // Username ถูก
-    driver.findElement(By.id("username"))
-            .sendKeys("demo_user");
+                driver.findElement(By.id("log-in"))
+                                .click();
 
-    // Password ผิด
-    driver.findElement(By.id("password"))
-            .sendKeys("wrong_password");
+                // ตรวจสอบว่ายังอยู่หน้า Login
+                assertTrue(driver.getCurrentUrl().contains("login"));
 
-    driver.findElement(By.id("log-in"))
-            .click();
-
-    // ตรวจสอบว่ายังอยู่หน้า Login
-    assertTrue(driver.getCurrentUrl().contains("login"));
-
-    System.out.println("Username is correct, but password is incorrect.");
-}
-// Test 6: Username ถูก แต่ Password ผิด
-@Test
-void shouldShowErrorWhenPasswordIsWrongAgain() {
-
-    driver.get("https://seleniumbase.io/simple/login");
-
-    // Username ถูก
-    driver.findElement(By.id("username"))
-            .sendKeys("demo_user");
-
-    // Password ผิด
-    driver.findElement(By.id("password"))
-            .sendKeys("wrong_password");
-
-    driver.findElement(By.id("log-in"))
-            .click();
-
-    // ตรวจสอบว่ายังอยู่หน้า Login
-    assertTrue(driver.getCurrentUrl().contains("login"));
-
-    System.out.println("Login failed: Username is correct but Password is wrong.");
-}
-// Test 7: ไม่ใส่ Username และ Password
-@Test
-void shouldNotLoginWhenBothFieldsAreEmpty() {
-
-    driver.get("https://seleniumbase.io/simple/login");
-
-    // ไม่ใส่ Username
-    // ไม่ใส่ Password
-
-    driver.findElement(By.id("log-in"))
-            .click();
-
-    assertTrue(driver.getCurrentUrl().contains("login"));
-
-    System.out.println("Login blocked when both fields are empty.");
-}
-
-
-// Test 8: Username เป็นช่องว่าง
-@Test
-void shouldNotLoginWhenUsernameContainsOnlySpaces() {
-
-    driver.get("https://seleniumbase.io/simple/login");
-
-    driver.findElement(By.id("username"))
-            .sendKeys("   ");
-
-    driver.findElement(By.id("password"))
-            .sendKeys("secret_pass");
-
-    driver.findElement(By.id("log-in"))
-            .click();
-
-    assertTrue(driver.getCurrentUrl().contains("login"));
-
-    System.out.println("Login blocked when username contains only spaces.");
-}
-
-
-// Test 9: Password เป็นช่องว่าง
-@Test
-void shouldNotLoginWhenPasswordContainsOnlySpaces() {
-
-    driver.get("https://seleniumbase.io/simple/login");
-
-    driver.findElement(By.id("username"))
-            .sendKeys("demo_user");
-
-    driver.findElement(By.id("password"))
-            .sendKeys("   ");
-
-    driver.findElement(By.id("log-in"))
-            .click();
-
-    assertTrue(driver.getCurrentUrl().contains("login"));
-
-    System.out.println("Login blocked when password contains only spaces.");
-}
-
-
-// Test 10: ตรวจสอบ Password field
-@Test
-void shouldHidePasswordInput() {
-
-    driver.get("https://seleniumbase.io/simple/login");
-
-    String inputType = driver.findElement(By.id("password"))
-            .getAttribute("type");
-
-    assertEquals("password", inputType);
-
-    System.out.println("Password field is hidden.");
-}
-
-
-// Test 11: ตรวจสอบว่ามีช่อง Username
-@Test
-void shouldHaveUsernameField() {
-
-    driver.get("https://seleniumbase.io/simple/login");
-
-    WebElement username = driver.findElement(By.id("username"));
-
-    assertTrue(username.isDisplayed());
-
-    System.out.println("Username field is displayed.");
-}
-
-
-// Test 12: ตรวจสอบว่ามีช่อง Password
-@Test
-void shouldHavePasswordField() {
-
-    driver.get("https://seleniumbase.io/simple/login");
-
-    WebElement password = driver.findElement(By.id("password"));
-
-    assertTrue(password.isDisplayed());
-
-    System.out.println("Password field is displayed.");
-}
+                System.out.println("Username is required.");
+        }
 }

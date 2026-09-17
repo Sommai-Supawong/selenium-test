@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.LoginTest" time="5.247" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.AuthenticationTest" time="13.364" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -59,11 +59,15 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="shouldShowErrorWhenUsernameIsEmpty" classname="com.example.LoginTest" time="1.3">
+  <testcase name="shouldShowErrorWhenUsernameIsEmpty" classname="com.example.AuthenticationTest" time="1.045">
     <system-out><![CDATA[Username is required.
 ]]></system-out>
   </testcase>
-  <testcase name="shouldShowErrorMessageWhenLoginFails" classname="com.example.LoginTest" time="1.428">
+  <testcase name="shouldHidePasswordInput" classname="com.example.AuthenticationTest" time="1.156">
+    <system-out><![CDATA[Password field is hidden.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldShowErrorMessageWhenLoginFails" classname="com.example.AuthenticationTest" time="0.993">
     <system-out><![CDATA[Login failed message: Simple Login Testing Page
 Invalid Username!
 Username
@@ -74,8 +78,16 @@ For Login Information, See:
 seleniumbase.io/simple/signup
 ]]></system-out>
   </testcase>
-  <testcase name="shouldLoginSuccessfully" classname="com.example.LoginTest" time="1.35"/>
-  <testcase name="shouldShowErrorWhenPasswordIsEmpty" classname="com.example.LoginTest" time="1.161">
+  <testcase name="shouldLoginSuccessfully" classname="com.example.AuthenticationTest" time="1.336"/>
+  <testcase name="shouldHavePasswordField" classname="com.example.AuthenticationTest" time="1.022">
+    <system-out><![CDATA[Password field is displayed.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldHaveUsernameField" classname="com.example.AuthenticationTest" time="1.139">
+    <system-out><![CDATA[Username field is displayed.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldShowErrorWhenPasswordIsEmpty" classname="com.example.AuthenticationTest" time="1.033">
     <system-out><![CDATA[Validation message: Simple Login Testing Page
 The Password is Required!
 Username
@@ -84,6 +96,26 @@ Sign in
 
 For Login Information, See:
 seleniumbase.io/simple/signup
+]]></system-out>
+  </testcase>
+  <testcase name="shouldShowErrorWhenPasswordIsWrong" classname="com.example.AuthenticationTest" time="1.227">
+    <system-out><![CDATA[Username is correct, but password is incorrect.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldShowErrorWhenPasswordIsWrongAgain" classname="com.example.AuthenticationTest" time="0.953">
+    <system-out><![CDATA[Login failed: Username is correct but Password is wrong.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotLoginWhenBothFieldsAreEmpty" classname="com.example.AuthenticationTest" time="1.213">
+    <system-out><![CDATA[Login blocked when both fields are empty.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotLoginWhenPasswordContainsOnlySpaces" classname="com.example.AuthenticationTest" time="1.081">
+    <system-out><![CDATA[Login blocked when password contains only spaces.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotLoginWhenUsernameContainsOnlySpaces" classname="com.example.AuthenticationTest" time="1.161">
+    <system-out><![CDATA[Login blocked when username contains only spaces.
 ]]></system-out>
   </testcase>
 </testsuite>
